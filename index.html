@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <!-- Mute the fetch polyfill error caused by third-party libraries -->
+    <script>
+      window.addEventListener('error', function(event) {
+        if (event.message && event.message.indexOf('Cannot set property fetch') !== -1) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event.reason && event.reason.message && event.reason.message.indexOf('Cannot set property fetch') !== -1) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
+      
+      // Try to gracefully intercept the fetch setter if it's configurable
+      try {
+        const desc = Object.getOwnPropertyDescriptor(window, 'fetch');
+        if (desc && !desc.set && desc.configurable) {
+          Object.defineProperty(window, 'fetch', {
+            get: desc.get,
+            set: function(newVal) { /* silently ignore */ },
+            configurable: true,
+            enumerable: desc.enumerable
+          });
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
