@@ -21,7 +21,8 @@ import {
   FileSpreadsheet,
   Wand2,
   Sparkles,
-  Clock
+  Clock,
+  MessageSquare
 } from 'lucide-react';
 
 const APP_CATEGORIES = [
@@ -115,6 +116,38 @@ const APP_CATEGORIES = [
             { step: 1, title: "Tải ảnh", desc: "Chọn bức ảnh chụp toàn màn hình có chứa Taskbar." },
             { step: 2, title: "Sửa thời gian", desc: "Thiết lập lại thời gian, ngày tháng năm muốn hiển thị." },
             { step: 3, title: "Download", desc: "Nhấn nút Tải Về ngay sau khi xem trước (1 điểm = 1 lần xuất)." }
+          ]
+        }
+      },
+      {
+        id: 5,
+        name: 'Tiện Ích Tự Động Điền Nhận Xét',
+        desc: 'Trợ thủ đắc lực giúp giáo viên tự động điền nhận xét học sinh hàng loạt trên CSDL và vnEdu. Tiết kiệm 90% thời gian.',
+        icon: MessageSquare,
+        iconBg: 'bg-rose-500',
+        views: 0,
+        hot: true,
+        free: false,
+        price: 'Có Phí',
+        guideLink: '#',
+        loginLink: 'https://drive.google.com/file/d/12jGrWhhKfKwoO2ghhkFc3VnfNKHV3rBu/view?usp=sharing',
+        isExternalLink: true,
+        actionText: 'TẢI TIỆN ÍCH',
+        guideDetails: {
+          title: "TIỆN ÍCH TỰ ĐỘNG ĐIỀN NHẬN XÉT HỌC SINH",
+          subtitle: "\"TRỢ THỦ\" ĐẮC LỰC CHO GIÁO VIÊN!",
+          videoLink: "#",
+          overview: "Thầy cô đang mệt mỏi vì phải gõ từng dòng nhận xét trên CSDL hay vnEdu vào mỗi dịp giữa kỳ, cuối kỳ? Hãy để tiện ích của chúng tôi giúp thầy cô tiết kiệm 90% thời gian!\n\nCài đặt một lần, dùng lâu dài. Trải nghiệm ngay để kỳ đánh giá học sinh không còn là nỗi ám ảnh!",
+          features: [
+            { id: 1, title: "Tự động điền hàng loạt", desc: "Chỉ 1 click, nhận xét tự động điền theo đúng mức điểm/mức đạt được của từng học sinh.", icon: Zap, color: "text-blue-500" },
+            { id: 2, title: "Hỗ trợ đa nền tảng", desc: "Hoạt động mượt mà trên CSDL (Hà Nội, MOET) và vnEdu.", icon: Globe, color: "text-emerald-500" },
+            { id: 3, title: "Bao trọn các loại đánh giá", desc: "Hỗ trợ từ điểm môn học đến đánh giá Năng lực - Phẩm chất (NLPC) và Sổ học bạ.", icon: Check, color: "text-orange-500" },
+            { id: 4, title: "Thư viện cá nhân hóa", desc: "Thầy cô tự do chỉnh sửa, thêm bớt kho nhận xét đa dạng của riêng mình.", icon: FileText, color: "text-fuchsia-500" }
+          ],
+          steps: [
+            { step: 1, title: "Cài đặt & Đăng nhập", desc: "Cài đặt tiện ích vào trình duyệt và đăng nhập." },
+            { step: 2, title: "Cấu hình đánh giá", desc: "Thầy cô có thể chủ động sửa lại kho nhận xét theo ý mình." },
+            { step: 3, title: "Tự động điền", desc: "Vào CSDL/vnEdu, bấm 1 click và để tiện ích tự động điền nhận xét." }
           ]
         }
       }
@@ -670,11 +703,10 @@ export default function App() {
              {/* Floating Home Button */}
              <button 
                 onClick={() => setActiveIframeApp(null)} 
-                className="absolute top-5 left-5 z-[210] flex items-center gap-2 pl-3 pr-4 py-2 bg-slate-900/40 hover:bg-slate-900/80 backdrop-blur-md border border-white/20 rounded-full text-white shadow-lg transition-all group"
+                className="absolute top-2 left-2 z-[210] flex items-center justify-center w-10 h-10 bg-slate-900/80 hover:bg-slate-900 backdrop-blur-md border border-white/20 rounded-full text-white shadow-lg transition-all group"
                 title="Quay lại trang chủ"
               >
-                 <Home size={16} strokeWidth={2.5} className="group-hover:scale-110 transition-transform" />
-                 <span className="text-[11px] font-bold uppercase tracking-wider whitespace-nowrap">Giáo Dục Đổi Mới</span>
+                 <Home size={18} strokeWidth={2.5} className="group-hover:scale-110 transition-transform" />
              </button>
            </div>
         </div>
@@ -735,6 +767,17 @@ export default function App() {
                    SỬA ẢNH THỜI GIAN TASKBAR (NẠP ĐIỂM)
                  </div>
                  <div className="text-red-500 font-black text-sm ml-3 shrink-0">1 ĐIỂM = 1 LẦN</div>
+               </div>
+
+               {/* Tiện Ích Nhận Xét */}
+               <div className="bg-white rounded-2xl border border-slate-100 p-4 flex items-center shadow-sm">
+                 <div className="text-emerald-500 mr-3 shrink-0">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                 </div>
+                 <div className="flex-1 text-[11px] sm:text-xs font-bold text-slate-700 leading-snug">
+                   TIỆN ÍCH TỰ ĐỘNG ĐIỀN NHẬN XÉT (TRỌN ĐỜI)
+                 </div>
+                 <div className="text-red-500 font-black text-sm ml-3 shrink-0">LIÊN HỆ</div>
                </div>
 
                {/* App Lên kế hoạch - Combined */}
