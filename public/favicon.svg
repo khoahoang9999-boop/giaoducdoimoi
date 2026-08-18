@@ -1,0 +1,30 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#fbbf24"/>
+      <stop offset="100%" stopColor="#84cc16"/>
+    </linearGradient>
+  </defs>
+  
+  {/* Stack Base / Closed Book */}
+  <path d="M50 55 L15 67 L50 79 L85 67 Z" fill="#22c55e" />
+  <path d="M15 67 L50 79 L50 93 L15 81 Z" fill="#16a34a" />
+  <path d="M85 67 L50 79 L50 93 L85 81 Z" fill="#15803d" />
+  
+  {/* Stack Lines (Pages indicator) */}
+  <path d="M15 72.5 L50 84.5 L85 72.5" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M15 78.5 L50 90.5 L85 78.5" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+  {/* AI Star acting as a crown */}
+  <path d="M50 5 Q 50 33 22 33 Q 50 33 50 61 Q 50 33 78 33 Q 50 33 50 5 Z" fill="url(#starGrad)" />
+  
+  {/* Star Center */}
+  <circle cx="50" cy="33" r="7" fill="#ffffff" />
+  <circle cx="50" cy="33" r="3.5" fill="#fbbf24" />
+
+  {/* Floating Sparkles (Lấp lánh) */}
+  <circle cx="28" cy="18" r="3" fill="#fbbf24" />
+  <circle cx="72" cy="18" r="3" fill="#fbbf24" />
+  <circle cx="38" cy="48" r="2" fill="#fbbf24" />
+  <circle cx="62" cy="48" r="2" fill="#fbbf24" />
+</svg>
