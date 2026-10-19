@@ -42,7 +42,7 @@ const APP_CATEGORIES = [
         free: false,
         price: 'Có Phí',
         guideLink: '#',
-        loginLink: 'https://soangiaoan.online/',
+        loginLink: 'https://khdh.soangiaoan.online/',
         guideDetails: {
           title: "Soạn Giáo Án AI Online",
           subtitle: "Trợ lý AI soạn Kế hoạch bài dạy chuẩn Bộ GD&ĐT",
