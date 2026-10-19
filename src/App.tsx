@@ -23,7 +23,8 @@ import {
   Sparkles,
   Clock,
   MessageSquare,
-  FileSearch
+  FileSearch,
+  Gamepad2
 } from 'lucide-react';
 
 const APP_CATEGORIES = [
@@ -245,6 +246,34 @@ const APP_CATEGORIES = [
     id: 'hoat-dong-vui-nhon',
     title: '✨ HOẠT ĐỘNG LỚP HỌC',
     apps: [
+      {
+        id: 9,
+        name: 'Trò Chơi Lớp Học',
+        desc: 'Ứng dụng gọi tên học sinh lên bảng vui nhộn với vòng quay may mắn, slot machine và cuộc đua trực quan tạo không khí sôi nổi.',
+        icon: Gamepad2,
+        iconBg: 'bg-orange-500',
+        views: 0,
+        hot: true,
+        free: true,
+        guideLink: '#',
+        loginLink: 'https://trochoi.soangiaoan.online/',
+        guideDetails: {
+          title: "Trò Chơi Lớp Học - Gọi Tên Học Sinh Lên Bảng Vui Nhộn",
+          subtitle: "Khuấy động không khí lớp học với các trò chơi tương tác trực quan",
+          videoLink: "#",
+          overview: "Ứng dụng hỗ trợ giáo viên tổ chức các hoạt động khởi động, kiểm tra bài cũ và gọi tên học sinh lên bảng một cách ngẫu nhiên, công bằng và đầy hào hứng thông qua vòng quay may mắn, máy quay số và các cuộc đua thú vị.",
+          features: [
+            { id: 1, title: "Đa Dạng Trò Chơi", desc: "Tích hợp Vòng quay may mắn, Slot Machine và Cuộc đua trực quan sinh động.", icon: Gamepad2, color: "text-orange-500" },
+            { id: 2, title: "Quản Lý Danh Sách", desc: "Dễ dàng nhập và lưu trữ danh sách học sinh của từng lớp học.", icon: Check, color: "text-emerald-500" },
+            { id: 3, title: "Hiệu Ứng Âm Thanh", desc: "Âm thanh và hiệu ứng chúc mừng vui nhộn giúp tiết học thêm phần hứng khởi.", icon: Sparkles, color: "text-blue-500" }
+          ],
+          steps: [
+            { step: 1, title: "Nhập danh sách lớp", desc: "Thêm tên các học sinh hoặc dán nhanh danh sách lớp vào ứng dụng." },
+            { step: 2, title: "Chọn trò chơi", desc: "Lựa chọn hình thức gọi tên như Vòng quay may mắn, Đua thú hoặc Quay số." },
+            { step: 3, title: "Bắt đầu quay", desc: "Nhấn nút bắt đầu trên màn hình chiếu để cả lớp cùng hồi hộp theo dõi kết quả." }
+          ]
+        }
+      },
       {
         id: 3,
         name: 'Ước Mơ Tương Lai',
@@ -581,7 +610,7 @@ export default function App() {
                           }}
                           className="w-full bg-blue-600 text-white px-2 py-2.5 rounded-xl text-[10px] sm:text-[11px] font-bold hover:bg-blue-700 shadow shadow-blue-100 transition-all flex justify-center items-center gap-1 group whitespace-nowrap tracking-wide"
                         >
-                          {app.actionText || 'ĐĂNG NHẬP'}
+                          {app.actionText || 'VÀO TRANG'}
                         </button>
                       </div>
                       
@@ -801,27 +830,54 @@ export default function App() {
       {activeIframeApp && (
         <div className="fixed inset-0 z-[200] bg-white flex flex-col animate-in fade-in zoom-in-95 duration-200">
            {/* Thanh điều hướng cố định phía trên (không nổi đè lên nội dung ứng dụng) */}
-           <div className="h-9 bg-slate-900 text-white px-3 flex items-center justify-between shrink-0 border-b border-slate-800">
+           <div className="bg-white text-slate-800 px-4 py-1.5 flex items-center justify-between shrink-0 border-b border-slate-200 shadow-sm">
              <button
                onClick={closeIframeApp}
-               className="flex items-center gap-1.5 text-xs font-semibold text-slate-200 hover:text-white bg-slate-800 hover:bg-blue-600 px-2.5 py-1 rounded-md transition-colors cursor-pointer"
+               className="flex items-center gap-2.5 cursor-pointer transition-transform hover:scale-105 active:scale-95 shrink-0 py-0.5"
                title="Quay về trang chủ (hoặc nhấn phím ESC / nút Back trình duyệt)"
              >
-               <ArrowLeft className="w-3.5 h-3.5" />
-               <span>Về Trang Chủ</span>
+               <div className="flex flex-col items-center leading-none" style={{ fontFamily: "'Nunito', sans-serif" }}>
+                 <span className="text-[19px] sm:text-[21px] font-black text-[#006cb7] tracking-tight drop-shadow-sm mb-0.5">Giáo dục</span>
+                 <span className="text-[16px] sm:text-[18px] font-black text-[#006cb7] tracking-tight drop-shadow-sm lowercase">đổi mới</span>
+               </div>
+               
+               <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0">
+                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-md">
+                   <defs>
+                     <linearGradient id="starGradIframe" x1="0%" y1="0%" x2="0%" y2="100%">
+                       <stop offset="0%" stopColor="#fbbf24"/>
+                       <stop offset="100%" stopColor="#84cc16"/>
+                     </linearGradient>
+                   </defs>
+                   <path d="M50 55 L15 67 L50 79 L85 67 Z" fill="#22c55e" />
+                   <path d="M15 67 L50 79 L50 93 L15 81 Z" fill="#16a34a" />
+                   <path d="M85 67 L50 79 L50 93 L85 81 Z" fill="#15803d" />
+                   <path d="M15 72.5 L50 84.5 L85 72.5" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                   <path d="M15 78.5 L50 90.5 L85 78.5" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                   <path d="M50 5 Q 50 33 22 33 Q 50 33 50 61 Q 50 33 78 33 Q 50 33 50 5 Z" fill="url(#starGradIframe)" />
+                   <circle cx="50" cy="33" r="7" fill="#ffffff" />
+                   <circle cx="50" cy="33" r="3.5" fill="#fbbf24" />
+                   <circle cx="28" cy="18" r="3" fill="#fbbf24" />
+                   <circle cx="72" cy="18" r="3" fill="#fbbf24" />
+                   <circle cx="38" cy="48" r="2" fill="#fbbf24" />
+                   <circle cx="62" cy="48" r="2" fill="#fbbf24" />
+                 </svg>
+               </div>
              </button>
-             <span className="text-xs font-medium text-slate-300 truncate max-w-[50%]">
+
+             <span className="text-xs sm:text-sm font-bold text-slate-600 truncate max-w-[45%]">
                {activeIframeApp.name}
              </span>
+
              <a
                href={activeIframeApp.url}
                target="_blank"
                rel="noopener noreferrer"
-               className="flex items-center gap-1 text-[11px] text-slate-300 hover:text-white px-2 py-1 rounded hover:bg-slate-800 transition-colors"
+               className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-full transition-colors shrink-0"
                title="Mở ứng dụng trong tab mới"
              >
                <span>Mở tab mới</span>
-               <Globe className="w-3 h-3" />
+               <Globe className="w-3.5 h-3.5" />
              </a>
            </div>
 
