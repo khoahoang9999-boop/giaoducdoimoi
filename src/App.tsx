@@ -32,6 +32,64 @@ const APP_CATEGORIES = [
     title: '📝 HỒ SƠ GIẢNG DẠY',
     apps: [
       {
+        id: 8,
+        name: 'Soạn Giáo Án AI',
+        desc: 'Công cụ AI hỗ trợ giáo viên soạn giáo án (Kế hoạch bài dạy) chuẩn chương trình GDPT 2018 nhanh chóng, chi tiết và tiết kiệm thời gian.',
+        icon: Sparkles,
+        iconBg: 'bg-cyan-600',
+        views: 0,
+        hot: true,
+        free: false,
+        price: 'Có Phí',
+        guideLink: '#',
+        loginLink: 'https://soangiaoan.online/',
+        guideDetails: {
+          title: "Soạn Giáo Án AI Online",
+          subtitle: "Trợ lý AI soạn Kế hoạch bài dạy chuẩn Bộ GD&ĐT",
+          videoLink: "#",
+          overview: "Hệ thống ứng dụng trí tuệ nhân tạo hỗ trợ giáo viên các cấp soạn giáo án (Kế hoạch bài dạy) bám sát chương trình GDPT 2018 (Công văn 5512, 2345). Tự động hóa quy trình thiết kế hoạt động dạy học, giúp tiết kiệm thời gian và nâng cao chất lượng bài giảng.",
+          features: [
+            { id: 1, title: "Chuẩn Công Văn", desc: "Bám sát cấu trúc Kế hoạch bài dạy theo quy định mới nhất của Bộ GD&ĐT.", icon: Check, color: "text-blue-500" },
+            { id: 2, title: "Soạn Siêu Tốc", desc: "Tự động triển khai đầy đủ các hoạt động Khởi động, Hình thành kiến thức, Luyện tập, Vận dụng.", icon: Zap, color: "text-emerald-500" },
+            { id: 3, title: "Xuất File Word", desc: "Tải về giáo án định dạng Word chuẩn đẹp, dễ dàng chỉnh sửa và in ấn.", icon: FileText, color: "text-orange-500" }
+          ],
+          steps: [
+            { step: 1, title: "Chọn môn học & bài dạy", desc: "Nhập tên bài học, bộ sách giáo khoa, khối lớp hoặc tải tài liệu bài học lên hệ thống." },
+            { step: 2, title: "AI Thiết kế bài giảng", desc: "Hệ thống AI tự động phân tích mục tiêu và xây dựng tiến trình các hoạt động dạy học chi tiết." },
+            { step: 3, title: "Tải về & Sử dụng", desc: "Xem trước, tùy chỉnh nội dung nếu cần và xuất ra file Word hoàn chỉnh." }
+          ]
+        }
+      },
+      {
+        id: 7,
+        name: 'Tạo Đề Kiểm Tra AI',
+        desc: 'Công cụ AI hỗ trợ giáo viên tạo đề kiểm tra, ngân hàng câu hỏi trắc nghiệm và tự luận nhanh chóng, chính xác.',
+        icon: FileText,
+        iconBg: 'bg-indigo-600',
+        views: 0,
+        hot: true,
+        free: false,
+        price: 'Có Phí',
+        guideLink: '#',
+        loginLink: 'https://dethi.soangiaoan.online/',
+        guideDetails: {
+          title: "Tạo Đề Kiểm Tra AI",
+          subtitle: "Công cụ tạo đề thi, kiểm tra thông minh",
+          videoLink: "#",
+          overview: "Hệ thống AI giúp giáo viên tạo nhanh các đề kiểm tra trắc nghiệm, tự luận, ma trận đề thi từ văn bản, tài liệu hoặc chủ đề bất kỳ. Tiết kiệm tối đa thời gian ra đề.",
+          features: [
+            { id: 1, title: "Tạo đề thông minh", desc: "Tự động sinh câu hỏi từ tài liệu hoặc chủ đề yêu cầu.", icon: Zap, color: "text-blue-500" },
+            { id: 2, title: "Đa dạng định dạng", desc: "Hỗ trợ câu hỏi trắc nghiệm, tự luận, và xuất ma trận đề.", icon: FileText, color: "text-emerald-500" },
+            { id: 3, title: "Xuất file Word chuẩn", desc: "Dễ dàng xuất ra file Word định dạng chuẩn để in ấn.", icon: Check, color: "text-orange-500" }
+          ],
+          steps: [
+            { step: 1, title: "Nhập nội dung", desc: "Tải lên tài liệu tham khảo hoặc nhập chủ đề bài học." },
+            { step: 2, title: "Cấu hình đề thi", desc: "Chọn số lượng câu hỏi, mức độ khó dễ, định dạng trắc nghiệm hay tự luận." },
+            { step: 3, title: "Xuất file", desc: "AI tự động tạo đề và đáp án. Tải ngay file Word về máy." }
+          ]
+        }
+      },
+      {
         id: 1,
         name: 'Lên Kế Hoạch Dạy Học Tự Động',
         desc: 'Tính năng tạo kế hoạch cho giáo viên tiểu học lên PPCT tự động nhanh chóng. Bạn chỉ cần tải Thời khoá biểu, Phân phối chương trình và mẫu Kế hoạch cá nhân lên là phần mềm tự động tạo kế hoạch.',
@@ -180,35 +238,6 @@ const APP_CATEGORIES = [
             { step: 3, title: "Nhận kết quả", desc: "Xem báo cáo chi tiết về điểm số, nhận xét và các góp ý cải thiện." }
           ]
         }
-      },
-      {
-        id: 7,
-        name: 'Tạo Đề Kiểm Tra AI',
-        desc: 'Công cụ AI hỗ trợ giáo viên tạo đề kiểm tra, ngân hàng câu hỏi trắc nghiệm và tự luận nhanh chóng, chính xác.',
-        icon: FileText,
-        iconBg: 'bg-indigo-600',
-        views: 0,
-        hot: true,
-        free: false,
-        price: 'Có Phí',
-        guideLink: '#',
-        loginLink: 'https://taodethionline-ai.onrender.com',
-        guideDetails: {
-          title: "Tạo Đề Kiểm Tra AI",
-          subtitle: "Công cụ tạo đề thi, kiểm tra thông minh",
-          videoLink: "#",
-          overview: "Hệ thống AI giúp giáo viên tạo nhanh các đề kiểm tra trắc nghiệm, tự luận, ma trận đề thi từ văn bản, tài liệu hoặc chủ đề bất kỳ. Tiết kiệm tối đa thời gian ra đề.",
-          features: [
-            { id: 1, title: "Tạo đề thông minh", desc: "Tự động sinh câu hỏi từ tài liệu hoặc chủ đề yêu cầu.", icon: Zap, color: "text-blue-500" },
-            { id: 2, title: "Đa dạng định dạng", desc: "Hỗ trợ câu hỏi trắc nghiệm, tự luận, và xuất ma trận đề.", icon: FileText, color: "text-emerald-500" },
-            { id: 3, title: "Xuất file Word chuẩn", desc: "Dễ dàng xuất ra file Word định dạng chuẩn để in ấn.", icon: Check, color: "text-orange-500" }
-          ],
-          steps: [
-            { step: 1, title: "Nhập nội dung", desc: "Tải lên tài liệu tham khảo hoặc nhập chủ đề bài học." },
-            { step: 2, title: "Cấu hình đề thi", desc: "Chọn số lượng câu hỏi, mức độ khó dễ, định dạng trắc nghiệm hay tự luận." },
-            { step: 3, title: "Xuất file", desc: "AI tự động tạo đề và đáp án. Tải ngay file Word về máy." }
-          ]
-        }
       }
     ]
   },
@@ -282,12 +311,33 @@ export default function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
   const [activeGuideApp, setActiveGuideApp] = useState<any>(null);
+  const [activeIframeApp, setActiveIframeApp] = useState<{name: string, url: string, id: number} | null>(null);
+  const [isIframeLoading, setIsIframeLoading] = useState(true);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     localStorage.setItem('app-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setActiveIframeApp(null);
+      setActiveGuideApp(null);
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveIframeApp(null);
+        setActiveGuideApp(null);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const handleAppClick = (appId: number) => {
     setAppViews(prev => {
@@ -299,7 +349,20 @@ export default function App() {
 
   const openIframeApp = (app: any) => {
     handleAppClick(app.id);
-    window.open(app.loginLink, '_blank');
+    if (app.isExternalLink) {
+      window.open(app.loginLink, '_blank');
+    } else {
+      window.history.pushState({ iframeApp: app.id }, '', `#app-${app.id}`);
+      setIsIframeLoading(true);
+      setActiveIframeApp({ name: app.name, url: app.loginLink, id: app.id });
+    }
+  };
+
+  const closeIframeApp = () => {
+    setActiveIframeApp(null);
+    if (window.location.hash.startsWith('#app-')) {
+      window.history.back();
+    }
   };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -734,6 +797,51 @@ export default function App() {
         </div>
       )}
 
+      {/* External App Fullscreen Wrapper */}
+      {activeIframeApp && (
+        <div className="fixed inset-0 z-[200] bg-white flex flex-col animate-in fade-in zoom-in-95 duration-200">
+           {/* Thanh điều hướng cố định phía trên (không nổi đè lên nội dung ứng dụng) */}
+           <div className="h-9 bg-slate-900 text-white px-3 flex items-center justify-between shrink-0 border-b border-slate-800">
+             <button
+               onClick={closeIframeApp}
+               className="flex items-center gap-1.5 text-xs font-semibold text-slate-200 hover:text-white bg-slate-800 hover:bg-blue-600 px-2.5 py-1 rounded-md transition-colors cursor-pointer"
+               title="Quay về trang chủ (hoặc nhấn phím ESC / nút Back trình duyệt)"
+             >
+               <ArrowLeft className="w-3.5 h-3.5" />
+               <span>Về Trang Chủ</span>
+             </button>
+             <span className="text-xs font-medium text-slate-300 truncate max-w-[50%]">
+               {activeIframeApp.name}
+             </span>
+             <a
+               href={activeIframeApp.url}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="flex items-center gap-1 text-[11px] text-slate-300 hover:text-white px-2 py-1 rounded hover:bg-slate-800 transition-colors"
+               title="Mở ứng dụng trong tab mới"
+             >
+               <span>Mở tab mới</span>
+               <Globe className="w-3 h-3" />
+             </a>
+           </div>
+
+           <div className="flex-1 bg-slate-50 relative w-full h-full">
+             {isIframeLoading && (
+               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-slate-50">
+                 <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
+                 <p className="text-slate-500 font-medium">Đang tải ứng dụng...</p>
+               </div>
+             )}
+             
+             <iframe 
+               src={activeIframeApp.url} 
+               onLoad={() => setIsIframeLoading(false)}
+               className={`absolute inset-0 w-full h-full border-none bg-white transition-opacity duration-500 ${isIframeLoading ? 'opacity-0' : 'opacity-100'}`} 
+               title={activeIframeApp.name}
+             />
+           </div>
+        </div>
+      )}
 
       {/* Pricing Modal */}
       {isPricingOpen && (
