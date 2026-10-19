@@ -495,9 +495,6 @@ export default function App() {
 
           {/* Right: Action buttons */}
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-            <button className="px-3 sm:px-6 py-2 border-2 border-blue-600 text-blue-600 font-bold rounded-full text-xs sm:text-sm hover:bg-blue-50 transition-all whitespace-nowrap">
-              API DEMO
-            </button>
             <button 
               onClick={() => setIsPricingOpen(true)}
               className="px-3 sm:px-6 py-2 bg-blue-600 text-white font-bold rounded-full text-xs sm:text-sm shadow-md shadow-blue-200 hover:bg-blue-700 transition-all whitespace-nowrap"
@@ -830,19 +827,21 @@ export default function App() {
       {activeIframeApp && (
         <div className="fixed inset-0 z-[200] bg-white flex flex-col animate-in fade-in zoom-in-95 duration-200">
            {/* Thanh điều hướng cố định phía trên (không nổi đè lên nội dung ứng dụng) */}
-           <div className="bg-white text-slate-800 px-4 py-1.5 flex items-center justify-between shrink-0 border-b border-slate-200 shadow-sm">
+           <div className="bg-white text-slate-800 px-3 sm:px-4 py-1 flex items-center justify-start shrink-0 border-b border-slate-200 shadow-sm">
              <button
                onClick={closeIframeApp}
-               className="flex items-center gap-2.5 cursor-pointer transition-transform hover:scale-105 active:scale-95 shrink-0 py-0.5"
+               className="flex items-center gap-2 cursor-pointer transition-transform hover:scale-105 active:scale-95 shrink-0 py-0.5"
                title="Quay về trang chủ (hoặc nhấn phím ESC / nút Back trình duyệt)"
              >
-               <div className="flex flex-col items-center leading-none" style={{ fontFamily: "'Nunito', sans-serif" }}>
-                 <span className="text-[19px] sm:text-[21px] font-black text-[#006cb7] tracking-tight drop-shadow-sm mb-0.5">Giáo dục</span>
-                 <span className="text-[16px] sm:text-[18px] font-black text-[#006cb7] tracking-tight drop-shadow-sm lowercase">đổi mới</span>
-               </div>
+               <span
+                 className="text-xs sm:text-sm font-black text-[#006cb7] uppercase tracking-wide drop-shadow-sm whitespace-nowrap leading-none"
+                 style={{ fontFamily: "'Nunito', sans-serif" }}
+               >
+                 GIÁO DỤC ĐỔI MỚI
+               </span>
                
-               <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0">
-                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-md">
+               <div className="relative w-7 h-7 sm:w-8 sm:h-8 shrink-0">
+                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-sm">
                    <defs>
                      <linearGradient id="starGradIframe" x1="0%" y1="0%" x2="0%" y2="100%">
                        <stop offset="0%" stopColor="#fbbf24"/>
@@ -864,21 +863,6 @@ export default function App() {
                  </svg>
                </div>
              </button>
-
-             <span className="text-xs sm:text-sm font-bold text-slate-600 truncate max-w-[45%]">
-               {activeIframeApp.name}
-             </span>
-
-             <a
-               href={activeIframeApp.url}
-               target="_blank"
-               rel="noopener noreferrer"
-               className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-full transition-colors shrink-0"
-               title="Mở ứng dụng trong tab mới"
-             >
-               <span>Mở tab mới</span>
-               <Globe className="w-3.5 h-3.5" />
-             </a>
            </div>
 
            <div className="flex-1 bg-slate-50 relative w-full h-full">
